@@ -11,7 +11,7 @@
 
 ## Сигнатура
 ```ts
-export function myMapNumbers(
+function myMapNumbers(
   arr: readonly number[],
   fn: (value: number, index: number, array: readonly number[]) => number
 ): number[];
@@ -30,41 +30,25 @@ export function myMapNumbers(
 
 ## Сигнатура
 ```ts
-export function myFilterNumbers(
+function myFilterNumbers(
   arr: readonly number[],
   predicate: (value: number, index: number, array: readonly number[]) => boolean
 ): number[];
 ```
 
-# Задача 3: myReduce (само за числа)
+# Задача 3: myReduce 
 
 Напишете функция `myReduce`, която:
 - приема масив от числа `number[]`
 - приема reducer callback функция и initialValue
-  - accumulator започва от него
-  - ако масивът е празен → връща `initialValue`
 
 Reducer callback функцията се извиква с аргументи:
 `(acc, value, index, array)`
 
-❌ Забранено:
-- `Array.prototype.reduce`
 
----
-
-## Типове и сигнатури
+## Сигнатура
 ```ts
-export function myReduce(
-  arr: readonly number[],
-  reducer: (
-    acc: number,
-    value: number,
-    index: number,
-    array: readonly number[]
-  ) => number
-): number;
-
-export function myReduce(
+function myReduce(
   arr: readonly number[],
   reducer: (
     acc: number,
@@ -74,4 +58,19 @@ export function myReduce(
   ) => number,
   initialValue: number
 ): number;
+```
+
+# Задача 4: frequencyMap
+
+Напишете функция `frequencyMap`, която:
+- приема масив от числа `number[]`
+- връща обект, показващ **колко пъти се среща всяко число**
+- **трябва да използва `myReduce`** 
+- връща резултат от тип `Record<string, number>`
+
+## Сигнатура
+```ts
+export function frequencyMap(
+  arr: readonly number[]
+): Record<string, number>;
 ```
