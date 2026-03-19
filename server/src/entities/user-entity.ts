@@ -1,0 +1,10 @@
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+@Entity("user")
+export class UserEntity {
+  @PrimaryGeneratedColumn("increment", { name: "id", type: "bigint" })
+  id!: number;
+
+  @Column({ name: "name", type: "varchar", length: 255 })
+  name!: string;
+}

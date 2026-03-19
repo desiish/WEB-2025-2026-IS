@@ -11,7 +11,7 @@
     "target": "esnext",
     // For nodejs:
     "lib": ["esnext"],
-     "types": ["node"],
+    "types": ["node"],
     // and npm install -D @types/node
 
     // Other Outputs
@@ -39,5 +39,8 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   }
 }

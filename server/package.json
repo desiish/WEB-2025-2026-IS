@@ -8,11 +8,21 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "custom": "echo \"This is a custom script!\""
+    "typeorm": "typeorm-ts-node-commonjs -d src/app-data-source.ts",
+    "create-migration": "npx typeorm migration:create",
+    "run-migration": "npm run typeorm migration:run",
+    "revert-migration": "npm run typeorm migration:revert",
+    "show-migration": "npm run typeorm migration:show"
   },
   "devDependencies": {
+    "@types/convict": "^6.1.6",
     "@types/node": "^25.3.1",
+    "@types/pg": "^8.18.0",
+    "convict": "^6.2.4",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
     "ts-node": "^10.9.2",
+    "typeorm": "^0.3.28",
     "typescript": "^5.9.3"
   },
   "dependencies": {
